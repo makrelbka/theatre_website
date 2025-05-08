@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Оплата билета</title>
+
+    <link rel="stylesheet" href="/css/body.css">
+
+    <style>
+
+        .payment-info {
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-width: 400px;
+            background-color: white;
+        }
+        .payment-info input, .payment-info textarea, .payment-info input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-info button {
+            background-color: #28a745;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <!-- Подключаем EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Инициализация EmailJS
+        (function() {
+            emailjs.init('iTZlCM6CrGYaEDhNJ'); // Используйте ваш Public Key
+        })();
+
+        // Получаем данные из localStorage
+        const purchaseData = JSON.parse(localStorage.getItem('currentPurchase'));
+
+        // Отображаем email пользователя
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('userEmail').textContent = purchaseData.email;
+        });
+
+        async function uploadToYandexDisk(file) {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const response = await fetch('https://cloud-api.yandex.net/v1/disk/resources/upload', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'OAuth YOUR_YANDEX_OAUTH_TOKEN', // Замените на ваш OAuth-токен
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    path: `/${file.name}`,
+                    overwrite: true
+                })
+            });
+            const data = await response.json();
+            return data.href; // Ссылка для загрузки файла
+        }
+
+        async function sendPaymentProof() {
+            const proof = document.getElementById('proof').value;
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+
+            if (!proof && !file) {
+                alert("Пожалуйста, прикрепите подтверждение оплаты (текст или файл).");
+                return;
+            }
+
+            let fileUrl = '';
+            if (file) {
+                fileUrl = await uploadToYandexDisk(file);
+            }
+
+            const ticketNumber = Math.floor(Math.random() * 1000000); // Генерация номера билета
+            const confirmationData = {
+                ...purchaseData,
+                proof,
+                ticketNumber,
+                fileUrl
+            };
+            localStorage.setItem('paymentConfirmation', JSON.stringify(confirmationData));
+
+            // Уменьшаем количество билетов
+            let ticketsAvailable = JSON.parse(localStorage.getItem('ticketsAvailable'));
+            ticketsAvailable[purchaseData.eventId]--;
+            localStorage.setItem('ticketsAvailable', JSON.stringify(ticketsAvailable));
+
+            // Отправляем письмо с номером билета и ссылкой на файл
+            emailjs.send('service_j9p9q5c', 'template_eextyex', {
+                email: purchaseData.email,
+                ticketNumber: ticketNumber,
+                fileUrl: fileUrl || 'Файл не прикреплен',
+                proofText: proof || 'Текстовое подтверждение не прикреплено'
+            })
+            .then(() => {
+                alert("Письмо с номером билета отправлено на ваш email.");
+                window.location.href = "afisha.html";
+            }, (error) => {
+                alert("Ошибка при отправке письма: " + error.text);
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Оплата билета</h1>
+        <div class="payment-info">
+            <h2>Реквизиты для оплаты</h2>
+            <p><strong>Номер карты:</strong> 1234 5678 9012 3456</p>
+            <p><strong>Получатель:</strong> Иван Иванов</p>
+            <p><strong>Сумма:</strong> 300 руб.</p>
+            <p><strong>Ваш email:</strong> <span id="userEmail"></span></p>
+            <p>После оплаты отправьте подтверждение:</p>
+            <p>(Прикрепите файл с фото подстверждением или вставьте его из буфера обмена)</p>
+            <p>(Это подтверждение будет отправлено вам на почту вместе с билетом)</p>
+            <!-- <textarea id="proof" placeholder="Прикрепите скриншот перевода или укажите номер транзакции"></textarea> -->
+            <input type="file" id="file" accept="image/*, .pdf">
+            <button onclick="sendPaymentProof()">Отправить подтверждение</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("paste", (event) => {
+            let items = event.clipboardData.items;
+            for (let item of items) {
+                if (item.type.indexOf("image") !== -1) {
+                    let blob = item.getAsFile();
+                    let fileInput = document.getElementById("file");
+    
+                    let dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(new File([blob], "screenshot.png", { type: "image/png" }));
+                    fileInput.files = dataTransfer.files;
+                    alert("Изображение вставлено из буфера обмена!");
+                }
+            }
+        });
+    </script>
+    </body>
+    </html>
+    
+</body>
+</html>

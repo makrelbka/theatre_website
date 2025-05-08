@@ -1,0 +1,151 @@
+/* Poster */
+
+.poster-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 20px; 
+    margin-top: 40px;
+    max-width: 60%;
+}
+
+.poster-main {
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.poster-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.poster-small {
+    flex: 0.45;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.poster-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.poster-text {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* News */
+
+.news-section {
+    max-width: 60%;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin: auto;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-card {
+    border-radius: 10px;
+    border: 3px solid lightblue;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.news-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-title {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.news-date {
+    color: #888;
+    font-size: 14px;
+}
+
+/* Review */
+
+.reviews-section {
+    margin-top: 60px;
+    text-align: center;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.review-card {
+    background-color: transparent; 
+    padding: 20px;
+    border: 3px solid lightblue;
+    border-radius: 10px;
+
+    color: black;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+.review-author {
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.review-text {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.reviews-buttons {
+    margin: 20px;
+    background-color: white;
+}
+
+.reviews-buttons button {
+    background-color: transparent;
+    border: 3px solid lightblue;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+}

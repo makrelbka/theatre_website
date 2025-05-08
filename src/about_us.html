@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Афиша | Театр-студия "Школа Радости"</title>
+
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/about_us.css">
+    
+
+    <script>
+        fetch('/src/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/src/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</head>
+<body>
+    <div class="content_center">
+        <h1>О нас</h1>
+        <p>Мы - это Театр-студия "Школа Радости"!!! 🎭</p>
+        <p>Театр-студия "Школа Радости" приветствует вас!</p>
+        <p>Мы – команда талантливых детей, любящих театр!</p>
+
+        <img src="/data/pics/about_us/about_us_1.jpg" alt="Фото 1">
+        <p>Мы – создаем спектакли, которые играем на различных площадках родного Санкт-Петербурга, нашей страны, мы участвуем в творческих конкурсах и фестивалях!</p>
+        <p>Мы – дарим радость любимым зрителям на наших спектаклях!</p>
+        <p>Мы – это настоящий театр!</p>
+        <img src="/data/pics/about_us/about_us_2.jpg" alt="Фото 2">
+        <p>Наши двери открыты всем творчески-ориентированным детям! Обучение в 
+            Театр-студия "Школа Радости" поможет развить актерские навыки, 
+            раскрепостит вашего ребенка, а также подготовит к дальнейшему поступлению в творческие ВУЗы.
+        </p>
+    </div>
+</body>
+</html>

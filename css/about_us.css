@@ -1,0 +1,14 @@
+.content_center {
+    border-radius: 10px;
+    width: 60%;
+    padding: 20px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.content_center img {
+    border-radius: 10px;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+}

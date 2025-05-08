@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Афиша | Театр-студия "Школа Радости"</title>
+
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/afisha.css">
+
+    <script>
+        fetch('/src/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/src/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+
+        if (!localStorage.getItem('ticketsAvailable')) {
+            localStorage.setItem('ticketsAvailable', JSON.stringify({
+                event1: 50,
+                event2: 30,
+                event3: 20
+            }));
+        }
+
+        let ticketsAvailable = JSON.parse(localStorage.getItem('ticketsAvailable'));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('ticketCountEvent1').textContent = ticketsAvailable.event1;
+            document.getElementById('ticketCountEvent2').textContent = ticketsAvailable.event2;
+            document.getElementById('ticketCountEvent3').textContent = ticketsAvailable.event3;
+        });
+
+        function buyTicket(eventId, eventName, eventDate, eventTime, eventPrice) {
+            if (ticketsAvailable[eventId] > 0) {
+                let email = prompt("Введите ваш email для получения билета:");
+                if (email) {
+                    const purchaseData = {
+                        eventId,
+                        eventName,
+                        eventDate,
+                        eventTime,
+                        eventPrice,
+                        email
+                    };
+                    localStorage.setItem('currentPurchase', JSON.stringify(purchaseData));
+
+                    window.location.href = `payment.html`;
+                }
+            } else {
+                alert("Билеты закончились!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Афиша</h1>
+        <div class="event-container">
+            <div class="event">
+                <a href="/performances.html#section1" style="color: black; text-decoration: none;"><img src="/data/pics/posters/pterodactil.jpg" alt="Спектакль 1"></a>
+                <div class="event-description">
+                    <h2><a href="/performances.html#section1" style="color: black; text-decoration: none;">"Тушь. Варенье. Птеродактиль"</a></h2>
+                    <p>Дата: 22 марта 2025</p>
+                    <p>Время: 14:00</p>
+                    <p>Место: Основная сцена</p>
+                    <p>Осталось билетов: <span id="ticketCountEvent1">50</span></p>
+                    <button class="ticket-btn" onclick="buyTicket('event1', 'Название спектакля 1', '25 октября 2023', '19:00', 500)">Купить билет</button>
+                </div>
+            </div>
+            <div class="event">
+                <a href="/performances.html#section3" style="color: black; text-decoration: none;"><img src="/data/pics/posters/carnival.jpg" alt="Спектакль 2"></a>
+                <div class="event-description">
+                    <a href="/performances.html#section3" style="color: black; text-decoration: none;"><h2>"Карнавал Заветных Желаний"</h2></a>
+                    <p>Дата: 22 декабря 2024</p>
+                    <p>Время: 14:00</p>
+                    <p>Место: Основная сцена</p>
+                    <p>Осталось билетов: <span id="ticketCountEvent2">30</span></p>
+                    <button class="ticket-btn" onclick="buyTicket('event2', 'Название спектакля 2', '30 октября 2023', '18:30', 700)">Купить билет</button>
+                </div>
+            </div>
+            <div class="event">
+                <a href="/performances.html#section2" style="color: black; text-decoration: none;"><img src="/data/pics/posters/gandi.jpg" alt="Спектакль 3"></a>
+                <div class="event-description">
+                    <a href="/performances.html#section2" style="color: black; text-decoration: none;"><h2>"Ганди молчал по субботам"</h2></a>
+                    <p>Дата: 27 октября 2024</p>
+                    <p>Время: 14:00</p>
+                    <p>Место: Основная сцена</p>
+                    <p>Осталось билетов: <span id="ticketCountEvent3">20</span></p>
+                    <button class="ticket-btn" onclick="buyTicket('event3', 'Название спектакля 3', '5 ноября 2023', '17:00', 600)">Купить билет</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

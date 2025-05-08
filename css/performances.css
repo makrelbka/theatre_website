@@ -1,0 +1,33 @@
+.content {
+    width: 60%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.description {
+    line-height: 1.6;
+    font-size: 18px;
+    margin: 0 auto;
+    text-align: justify;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.photos-container-1 img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photos-container-2 img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.photos-container-3 img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}

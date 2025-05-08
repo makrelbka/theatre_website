@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Педагоги | Театр-студия "Школа Радости"</title>
+
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/teachers.css">
+
+    <script>
+        fetch('/src/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/html/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+</head>
+<body>
+    <div class="content_center">
+        <div class="teacher-container"> 
+            <div class="teacher-info">
+                <h1>Наши Педагоги</h1>
+            </div>
+        </div>
+        
+        <div class="teacher-container"> 
+            <img src="/data/pics/teachers/teacher_1.jpg" alt="Фото 1" style="width: 50%; height: auto;">
+        </div>
+        <div class="teacher-info"> 
+            <h2>Колганова Ирина Альбертовна</h2>
+            <p>Художественный руководитель и режиссер театра- актриса театра и кино, режиссер, педагог, старший преподаватель кафедры театрального искусства «Школа Русской Драмы Им. И. О. Горбачева» ВХУТЕИН (Художественно-технический институт).</p>
+            <h1>С нами сотрудничают:</h1>
+        </div>
+
+        <div class="teacher-container">
+            <img src="/data/pics/teachers/teacher_2.jpg" alt="Фото 2">
+            <div class="teacher-info">
+                <h3>Сытник Семен Семенович</h3>
+                <p>Курирует театр-студию Заслуженный артист РФ, актер Российского Государственного Академического Александринского театра, педагог,профессор, декан факультета театрального искусства «Школа Русской Драмы им. И.О. Горбачева».</p>
+            </div>
+        </div>
+        
+        <div class="teacher-container">
+            <img src="/data/pics/teachers/teacher_3.jpg" alt="Фото 3">
+            <div class="teacher-info">
+                <h3>Щукина Регина Вячеславовна</h3>
+                <p>Заслуженная артистка РФ, актриса молодежного театра на Фонтанке.</p>
+            </div>
+        </div>
+        
+        <div class="teacher-container">
+            <img src="/data/pics/teachers/teacher_4.jpg" alt="Фото 4">
+            <div class="teacher-info">
+                <h3>Решетникова Наталья Сергеевна</h3>
+                <p>Доцент Петербургского государственного института культуры, педагог, певица, член жюри международных конкурсов.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

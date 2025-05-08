@@ -1,0 +1,101 @@
+<!-- python3 -m http.server 8000 -->
+<!-- http://localhost:8000/ -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <title>Театр-студия "Школа Радости"</title>
+   
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="/css/index.css">
+
+<script>
+    fetch('/src/parts/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('afterbegin', data);
+        });
+
+    fetch('/src/parts/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.body.insertAdjacentHTML('beforeend', data);
+        });
+
+</script>
+
+<script src="/src/parts/carusel.js"></script>
+
+</head>
+<body>
+    <div class="poster-section">
+        <div class="poster-small">
+            <video autoplay loop muted>
+                <source src="/data/video/IMG_0292.MOV" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+
+        <div class="poster-main">
+            <a href="afisha.html" style="color: black; text-decoration: none;"><img src="/data/pics/posters/pterodactil.jpg" alt="Основная афиша"></a>
+        </div>
+        
+        <div class="poster-small">
+            <video autoplay loop muted>
+                <source src="/data/video/IMG_9234.MOV" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <h2>Последние новости</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="/data/pics/news1.jpg" class="news-image" alt="Новость 1">
+                <div class="news-content">
+                    <div class="news-date">27 марта 2024</div>
+                    <div class="news-title">Открытие нового сезона</div>
+                    <div class="news-text">Подробности о начале нового театрального сезона и готовящихся премьерах...</div>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <img src="/data/pics/news2.jpg" class="news-image" alt="Новость 2">
+                <div class="news-content">
+                    <div class="news-date">15 апреля 2024</div>
+                    <div class="news-title">Мастер-классы для детей</div>
+                    <div class="news-text">Приглашаем детей от 7 лет на серию театральных мастер-классов...</div>
+                </div>
+            </div>
+            
+            <div class="news-card">
+                <img src="/data/pics/news3.jpg" class="news-image" alt="Новость 3">
+                <div class="news-content">
+                    <div class="news-date">1 мая 2024</div>
+                    <div class="news-title">Летняя театральная школа</div>
+                    <div class="news-text">Набор участников в летнюю театральную смену. Подробности внутри...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2>Отзывы</h2>
+        <div class="reviews-container">
+
+        </div>
+        <div class="reviews-buttons">
+            <button onclick="previousReview()">Предыдущий</button>
+            <button onclick="nextReview()">Следующий</button>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+.content_left {
+    width: 60%;
+    text-align: left;
+    margin-left: 20%;
+    padding: 20px;
+}
+.content_center * {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+    
+}
+.teacher-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+.teacher-container img {
+    border-radius: 10px;
+    overflow: hidden; 
+    width: 300px; 
+}
+.teacher-container .teacher-info {
+    background-color: white;
+    flex: 1;
+}
+.teacher-info p {
+    background-color: white;
+    width: 100%; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    padding: 20px;
+}
