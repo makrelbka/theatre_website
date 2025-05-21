@@ -1,0 +1,197 @@
+127.0.0.1 - - [21/May/2025 20:17:28] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /css/body.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /css/index.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /src/parts/carusel.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /data/pics/posters/pterodactil.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /src/parts/header.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:28] "GET /src/parts/footer.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:29] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/news3.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/text/reviews.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/background.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/video/IMG_9234.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/news1.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/news2.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/video/IMG_0292.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/header/tg.svg.png HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/header/logo.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:29] "GET /data/pics/header/vk.svg.png HTTP/1.1" 200 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47204)
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/http/server.py", line 1294, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/usr/lib/python3.10/http/server.py", line 658, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3.10/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.10/http/server.py", line 420, in handle_one_request
+    method()
+  File "/usr/lib/python3.10/http/server.py", line 665, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/usr/lib/python3.10/http/server.py", line 865, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/usr/lib/python3.10/shutil.py", line 198, in copyfileobj
+    fdst_write(buf)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [21/May/2025 20:17:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:31] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:31] "GET /data/pics/news1.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:31] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:31] "GET /data/pics/news2.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:31] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:31] "GET /data/video/IMG_0292.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:31] "GET /data/pics/news3.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:31] "GET /data/video/IMG_9234.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:36] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:36] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /src/parts/header.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /src/parts/footer.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/text/reviews.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/video/IMG_0292.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:37] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/pics/news3.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:37] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/pics/news2.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/video/IMG_9234.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:17:37] "GET /data/pics/news1.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:19:22] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /src/parts/header.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /src/parts/footer.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/text/reviews.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/video/IMG_0292.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/pics/news3.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:20] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/video/IMG_9234.MOV HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/pics/news2.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:20] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:20] "GET /data/pics/news1.jpg HTTP/1.1" 404 -
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 47312)
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/socketserver.py", line 683, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python3.10/http/server.py", line 1294, in finish_request
+    self.RequestHandlerClass(request, client_address, self,
+  File "/usr/lib/python3.10/http/server.py", line 658, in __init__
+    super().__init__(*args, **kwargs)
+  File "/usr/lib/python3.10/socketserver.py", line 747, in __init__
+    self.handle()
+  File "/usr/lib/python3.10/http/server.py", line 432, in handle
+    self.handle_one_request()
+  File "/usr/lib/python3.10/http/server.py", line 420, in handle_one_request
+    method()
+  File "/usr/lib/python3.10/http/server.py", line 665, in do_GET
+    self.copyfile(f, self.wfile)
+  File "/usr/lib/python3.10/http/server.py", line 865, in copyfile
+    shutil.copyfileobj(source, outputfile)
+  File "/usr/lib/python3.10/shutil.py", line 198, in copyfileobj
+    fdst_write(buf)
+  File "/usr/lib/python3.10/socketserver.py", line 826, in write
+    self._sock.sendall(b)
+BrokenPipeError: [Errno 32] Broken pipe
+----------------------------------------
+127.0.0.1 - - [21/May/2025 20:20:22] "GET /src/contacts.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:22] "GET /src/parts/map.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:22] "GET /css/contacts.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /src/artists.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /css/body.css HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /css/artists.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_4.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_5.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/header/logo.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/header/vk.svg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_3.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/background.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/header/tg.svg.png HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_7.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_6.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:24] code 404, message File not found
+127.0.0.1 - - [21/May/2025 20:20:24] "GET /data/pics/artists/artist_8.jpg HTTP/1.1" 404 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /src/teachers.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /css/teachers.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/pics/teachers/teacher_1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/pics/teachers/teacher_2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/pics/teachers/teacher_3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/pics/teachers/teacher_4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /src/performances.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /css/performances.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /src/parts/photo_carusel.js HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/pterodactil.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/gandi.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/explanations_of_love.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/only_13.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/ay_da_balda.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:25] "GET /data/text/lenka.json HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/pterodactil/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/pterodactil/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/pterodactil/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/pterodactil/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/explanations_of_love/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/pterodactil/5.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/gandi/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/gandi/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/gandi/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/explanations_of_love/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/explanations_of_love/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/gandi/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/explanations_of_love/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/only_13/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/only_13/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/only_13/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/ay_da_balda/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/lenka/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/ay_da_balda/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/ay_da_balda/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/ay_da_balda/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/lenka/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/lenka/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /src/afisha.html HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /css/afisha.css HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/posters/pterodactil.jpg HTTP/1.1" 304 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/posters/carnival.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:26] "GET /data/pics/posters/gandi.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/pterodactil/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/pterodactil/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/gandi/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/pterodactil/5.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/pterodactil/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/gandi/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/pterodactil/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/gandi/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/explanations_of_love/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/gandi/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/only_13/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/ay_da_balda/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/explanations_of_love/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/only_13/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/explanations_of_love/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/ay_da_balda/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/explanations_of_love/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/only_13/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:27] "GET /data/pics/lenka/3.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:28] "GET /data/pics/lenka/1.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:28] "GET /data/pics/lenka/2.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:28] "GET /data/pics/ay_da_balda/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:28] "GET /data/pics/lenka/4.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [21/May/2025 20:20:28] "GET /data/pics/ay_da_balda/3.jpg HTTP/1.1" 200 -
