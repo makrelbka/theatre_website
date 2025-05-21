@@ -62,7 +62,10 @@ function createPhotoCarousel(containerSelector, jsonPath, interval = 5000) {
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    createPhotoCarousel('.photos-container-1', '/data/text/performance_1.json', 4000);
-    createPhotoCarousel('.photos-container-2', '/data/text/performance_2.json', 4000);
-    createPhotoCarousel('.photos-container-3', '/data/text/performance_2.json', 4000);
+    createPhotoCarousel('.photos-container-1', '/data/text/pterodactil.json', 4000);
+    createPhotoCarousel('.photos-container-2', '/data/text/gandi.json', 4000);
+    createPhotoCarousel('.photos-container-3', '/data/text/explanations_of_love.json', 4000);
+    createPhotoCarousel('.photos-container-4', '/data/text/only_13.json', 4000);
+    createPhotoCarousel('.photos-container-5', '/data/text/ay_da_balda.json', 4000);
+    createPhotoCarousel('.photos-container-6', '/data/text/lenka.json', 4000);
 });
