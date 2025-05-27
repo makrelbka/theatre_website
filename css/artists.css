@@ -19,7 +19,6 @@
     padding: 10px;
     width: 60%;
     margin: 0 auto; 
-    /* grid-template-columns: repeat(4, 1fr); */
 }
 
 .carousel::-webkit-scrollbar {
@@ -63,12 +62,21 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+    object-position: top;
     border-radius: 10px;
 }
 
 .artist h3 {
     font-size: 18px;
-    margin: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.artist h4 {
+    color: gray;
+    font-size: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px
 }
 
 .artist p {

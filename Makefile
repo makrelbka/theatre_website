@@ -17,3 +17,8 @@ open:
 status:
 	pgrep -fl http.server
 	pgrep -fl serveo.net
+
+git:
+	git add .
+	git commit -m "base push"
+	git push
