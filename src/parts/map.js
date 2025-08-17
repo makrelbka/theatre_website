@@ -5,13 +5,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initMap() {
         var map = new ymaps.Map("map", {
-            center: [59.9343, 30.3351], 
+            center: [59.929641, 30.356732], 
             zoom: 15,
             controls: ['zoomControl'] 
         });
         map.behaviors.disable(['scrollZoom', 'dblClickZoom']);
 
-        var placemark = new ymaps.Placemark([59.9343, 30.3351], {
+        var placemark = new ymaps.Placemark([59.929641, 30.356732], {
             balloonContent: 'Пушкинская улица, 9, Санкт-Петербург'
         }, {
             preset: 'islands#redDotIcon'
