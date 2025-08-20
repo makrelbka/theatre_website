@@ -1,12 +1,13 @@
-run:
+start:
 	@python3 -m http.server 8081
 	@echo "Started on 8081"
+	@echo  http://localhost:8081/
 
-kill:
+stop:
 	@pkill -f "python3 -m http.server 8081"
 
 open:
-	open http://localhost:8000
+	open http://localhost:8081
 
 status:
 	pgrep -fl http.server

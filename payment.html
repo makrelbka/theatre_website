@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Запись на спектакль</title>
+
+    <link rel="stylesheet" href="/css/body.css" />
+    <link rel="stylesheet" href="/css/payment.css" />
+
+    <script>
+        fetch('/src/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/src/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+    <script src="/assets/js/header_menu_button.js" defer></script>
+    
+    <script>
+
+        let purchaseData = null;
+        document.addEventListener('DOMContentLoaded', () => {
+            try {
+                const stored = localStorage.getItem('currentPurchase');
+                if (!stored) throw new Error('Нет данных о покупке');
+                purchaseData = JSON.parse(stored);
+
+                document.getElementById('eventName').textContent = purchaseData.eventName;
+            } catch (e) {
+                alert('Ошибка: не найдены данные о покупке. Пожалуйста, выберите билет заново.');
+                window.location.href = "afisha.html";
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <div class="content">
+    <h1>Запись на постановку</h1> 
+    <h3 id="eventName">не указан</h3>
+    <div class="payment-info">
+        <h2>Для записи необходимо ввести ваши контактные данные</h2>
+
+        <p><strong>Ваше ФИО:</strong> 
+        <textarea id="fio" placeholder="Введите ФИО"></textarea>
+        </p>
+        <p><strong>Ваш номер телефона:</strong> 
+        <textarea id="phone" placeholder="Введите номер"></textarea>
+        </p>
+
+        <p class="policy">
+        <input type="checkbox" id="policyCheckbox">
+        <label for="policyCheckbox">
+            Я согласен с <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+        </label>
+        </p>
+
+        <button id="submitBtn" onclick="sendPaymentProof()">Отправить подтверждение</button>
+
+    </div>
+</div>
+
+<script>
+function sendPaymentProof() {
+  const fio = document.getElementById('fio');
+  const phone = document.getElementById('phone');
+  const checkbox = document.getElementById('policyCheckbox');
+
+  let valid = true;
+
+  if (!fio.value.trim()) {
+    valid = false;
+  }
+
+  if (!phone.value.trim()) {
+    valid = false;
+  }
+
+  if (!checkbox.checked) {
+    valid = false;
+  }
+
+  if (!valid) {
+    alert("Заполните все поля и отметьте согласие с политикой конфиденциальности.");
+    return;
+  }
+
+  alert(`Форма успешно отправлена!\nФИО: ${fio.value}\nТелефон: ${phone.value}`);
+
+  fio.value = '';
+  phone.value = '';
+  checkbox.checked = false;
+}
+
+</script>
+
+
+</body>
+</html>

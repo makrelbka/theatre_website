@@ -1,5 +1,4 @@
-<!-- python3 -m http.server 8000 -->
-<!-- http://localhost:8000/ -->
+
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -12,43 +11,44 @@
 
     <title>Театр-студия "Школа Радости"</title>
    
-    <link rel="stylesheet" href="/css/body.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/assets/css/body.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 
 <script>
-    fetch('/src/parts/header.html')
+    fetch('/assets/parts/header.html')
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML('afterbegin', data);
         });
 
-    fetch('/src/parts/footer.html')
+    fetch('/assets/parts/footer.html')
         .then(response => response.text())
         .then(data => {
             document.body.insertAdjacentHTML('beforeend', data);
         });
-
 </script>
 
-<script src="/src/parts/carusel.js"></script>
+<script src="/assets/js/header_menu_button.js" defer></script>
+
+<script src="/assets/js/carousel_rewies.js"></script>
 
 </head>
 <body>
     <div class="poster-section">
         <div class="poster-small">
             <video autoplay loop muted>
-                <source src="/data/video/IMG_0292.MOV" type="video/mp4">
+                <source src="/assets/data/video/IMG_0292.MOV" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
         </div>
 
         <div class="poster-main">
-            <a href="src/afisha.html" style="color: black; text-decoration: none;"><img src="/data/pics/posters/pterodactil.jpg" alt="Основная афиша"></a>
+            <a href="afisha.html" style="color: black; text-decoration: none;"><img src="/assets/data/pics/posters/pterodactil.jpg" alt="Основная афиша"></a>
         </div>
         
         <div class="poster-small">
             <video autoplay loop muted>
-                <source src="/data/video/IMG_9234.MOV" type="video/mp4">
+                <source src="/assets/data/video/IMG_9234.MOV" type="video/mp4">
                 Ваш браузер не поддерживает видео.
             </video>
         </div>
@@ -58,7 +58,7 @@
         <h2>Последние новости</h2>
         <div class="news-grid">
             <div class="news-card">
-                <img src="/data/pics/news1.jpg" class="news-image" alt="Новость 1">
+                <img src="/assets/data/pics/news1.jpg" class="news-image" alt="Новость 1">
                 <div class="news-content">
                     <div class="news-date">27 марта 2024</div>
                     <div class="news-title">Открытие нового сезона</div>
@@ -67,7 +67,7 @@
             </div>
             
             <div class="news-card">
-                <img src="/data/pics/news2.jpg" class="news-image" alt="Новость 2">
+                <img src="/assets/data/pics/news2.jpg" class="news-image" alt="Новость 2">
                 <div class="news-content">
                     <div class="news-date">15 апреля 2024</div>
                     <div class="news-title">Мастер-классы для детей</div>
@@ -76,7 +76,7 @@
             </div>
             
             <div class="news-card">
-                <img src="/data/pics/news3.jpg" class="news-image" alt="Новость 3">
+                <img src="/assets/data/pics/news3.jpg" class="news-image" alt="Новость 3">
                 <div class="news-content">
                     <div class="news-date">1 мая 2024</div>
                     <div class="news-title">Летняя театральная школа</div>

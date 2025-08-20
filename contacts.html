@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Афиша | Театр-студия "Школа Радости"</title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js" defer></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=3cecc8b0-afa4-4378-a133-3507bbc15130&lang=ru_RU" type="text/javascript"></script>
+    <script src="/assets/js/map.js" defer></script>
+
+    <link rel="stylesheet" href="/assets/css/body.css">
+    <link rel="stylesheet" href="/assets/css/contacts.css">
+    <script>
+        fetch('/assets/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/assets/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+    <script src="/assets/js/header_menu_button.js" defer></script>
+</head>
+<body>
+    <div class="content_center">
+        <h1>Контакты</h1>
+        <p> Официальный TG: https://t.me/spbtheatr</p>
+        <p> Официальный VK: https://vk.com/schoolofjoyspb</p>
+        <h3>🎤 ЗАПИСЬ НА ПРОСЛУШИВАНИЕ В КОЛЛЕКТИВ:</h3>
+        <div>
+            <p> * WhatsApp +79112188873 - Колганова Ирина Альбертовна(художественный руководитель)</p>
+            <p>* Тел. +79219613423 - Китина Нина Андреевна(помощник режиссера)</p>
+            <p>* Эл. почта Irochka.kolganova@mail.ru</p>
+        </div>
+    </div>
+    <div id="map"></div>
+</body>
+</html>

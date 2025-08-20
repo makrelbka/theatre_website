@@ -1,0 +1,30 @@
+.payment-info {
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    max-width: 60%;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.payment-info input,
+.payment-info textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: medium;
+    text-align: center;
+}
+
+.payment-info button {
+    background-color: #28a745;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
