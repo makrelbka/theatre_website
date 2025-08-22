@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Запись на спектакль</title>
+
+    <link rel="stylesheet" href="/assets/css/body.css" />
+    <link rel="stylesheet" href="/assets/css/payment.css" />
+
+    <script>
+        fetch('/assets/parts/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+
+        fetch('/assets/parts/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('beforeend', data);
+            });
+    </script>
+    <script src="/assets/js/header_menu_button.js" defer></script>
+ 
+ <script>
+async function sendPaymentProof() {
+    const fio = document.getElementById('fio').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const checkbox = document.getElementById('policyCheckbox').checked;
+
+    if (!fio || !phone || !checkbox) {
+        alert("Заполните все поля и отметьте согласие с политикой конфиденциальности.");
+        return;
+    }
+
+    // берем данные о покупке из localStorage
+    const purchaseData = JSON.parse(localStorage.getItem('currentPurchase'));
+    if (!purchaseData) {
+        alert("Ошибка: нет данных о выбранном билете");
+        return;
+    }
+
+    try {
+        const response = await fetch('http://127.0.0.1:5000/api/buy', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                eventId: purchaseData.eventId,
+                fio,
+                phone
+            })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(`Билет успешно забронирован!\nОсталось билетов: ${result.ticketsLeft}`);
+            // очищаем форму
+            document.getElementById('fio').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('policyCheckbox').checked = false;
+            // очищаем localStorage
+            localStorage.removeItem('currentPurchase');
+        } else {
+            alert(`Ошибка: ${result.error}`);
+        }
+    } catch (err) {
+        console.error(err);
+        alert("Ошибка связи с сервером");
+    }
+}
+</script>
+
+
+    
+</head>
+<body>
+    <div class="content">
+    <h1>Запись на постановку</h1> 
+    <h3 id="eventName">не указан</h3>
+    <div class="payment-info">
+        <h2>Для записи необходимо ввести ваши контактные данные</h2>
+
+        <p><strong>Ваше ФИО:</strong> 
+        <textarea id="fio" placeholder="Введите ФИО"></textarea>
+        </p>
+        <p><strong>Ваш номер телефона:</strong> 
+        <textarea id="phone" placeholder="Введите номер"></textarea>
+        </p>
+
+        <p class="policy">
+        <input type="checkbox" id="policyCheckbox">
+        <label for="policyCheckbox">
+            Я согласен с <a href="/privacy.html" target="_blank">Политикой конфиденциальности</a>
+        </label>
+        </p>
+
+        <button id="submitBtn" onclick="sendPaymentProof()">Отправить подтверждение</button>
+
+    </div>
+</div>
+
+
+</body>
+</html>
