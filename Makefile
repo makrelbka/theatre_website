@@ -56,3 +56,16 @@ status:
 	@pgrep -fl "python3 -m http.server" || echo "Не запущен"
 	@echo "Процессы back (flask):"
 	@pgrep -fl "flask run" || echo "Не запущен"
+
+clean:
+	@echo "Очистка временных файлов..."
+	@find . -name ".DS_Store" -type f -delete 
+
+msg ?= "default commit"
+
+git:
+	@git status
+	@git add .
+	@git commit -m "$(msg)"
+	@git push
+
