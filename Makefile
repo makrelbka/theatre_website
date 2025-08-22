@@ -63,7 +63,7 @@ clean:
 
 msg ?= "default commit"
 
-git:
+git: clean
 	@git status
 	@git add .
 	@git commit -m "$(msg)"
