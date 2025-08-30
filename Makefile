@@ -26,7 +26,7 @@ stop-front:
 # Запуск бэкенда
 start-back:
 	@echo "Запуск сервера back на порту $(back_PORT)..."
-	@cd back && FLASK_APP=payment.py flask run --port=$(back_PORT) &
+	@cd back && FLASK_APP=registration.py flask run --port=$(back_PORT) &
 	@sleep 2
 	@echo "back запущен: http://localhost:$(back_PORT)/"
 
@@ -44,11 +44,11 @@ stop-back:
 
 # ---------------------------
 # Общие команды
-start-all: start-back start-front
+start: start-back start-front
 	@echo "Открываем фронтенд в браузере..."
 	@echo http://localhost:$(front_PORT)
 
-stop-all: stop-front stop-back
+stop: stop-front stop-back
 	@echo "Все процессы остановлены."
 
 status:

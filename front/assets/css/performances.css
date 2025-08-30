@@ -26,38 +26,38 @@
     padding: 20px;
 }
 
-.photos-container-1 img {
+
+.photo-card {
+    position: absolute;        
+    inset: 0;                  
+    opacity: 0;                
+    transition: opacity 1s ease-in-out;  
+}
+
+.photo-card.active {
+    opacity: 1;                
+    z-index: 1;                
+}
+
+
+.photo-card img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
 
-.photos-container-2 img {
+
+.photos-container-1,
+.photos-container-2,
+.photos-container-3,
+.photos-container-4,
+.photos-container-5,
+.photos-container-6 {
+    position: relative;      
     width: 100%;
-    object-fit: cover;
+    aspect-ratio: 16/9;      
+    overflow: hidden;
     border-radius: 12px;
 }
 
-.photos-container-3 img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.photos-container-4 img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.photos-container-5 img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}
-
-.photos-container-6 img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-}

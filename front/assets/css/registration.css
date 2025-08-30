@@ -1,4 +1,4 @@
-.payment-info {
+.registration-info {
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
@@ -8,8 +8,8 @@
     box-sizing: border-box;
 }
 
-.payment-info input,
-.payment-info textarea {
+.registration-info input,
+.registration-info textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -20,7 +20,7 @@
     text-align: center;
 }
 
-.payment-info button {
+.registration-info button {
     background-color: #28a745;
     color: black;
     border: none;

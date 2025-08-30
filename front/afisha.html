@@ -101,7 +101,7 @@ function buyTicket(eventId, eventName, eventDate, eventTime, eventPrice) {
   if ((ticketsAvailable[eventId] ?? 0) > 0) {
     const purchaseData = { eventId, eventName, eventDate, eventTime, eventPrice };
     localStorage.setItem('currentPurchase', JSON.stringify(purchaseData));
-    window.location.href = 'payment.html';
+    window.location.href = 'registration.html';
   } else {
     alert("Билеты закончились!");
   }

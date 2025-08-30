@@ -18,13 +18,8 @@ class PhotoCarousel {
 
         this.photos.forEach(photo => {
             const photoCard = document.createElement('div');
-            photoCard.classList.add('photo-card');
-            photoCard.style.display = 'none';
-
-            photoCard.innerHTML = `
-                <img src="${photo.src}" alt="${photo.alt}" class="photo-image">
-            `;
-
+            photoCard.classList.add('photo-card');  // скрыто через CSS opacity
+            photoCard.innerHTML = `<img src="${photo.src}" alt="${photo.alt}" class="photo-image">`;
             this.container.appendChild(photoCard);
         });
 
@@ -36,7 +31,7 @@ class PhotoCarousel {
     showPhoto(index) {
         const photoElements = this.container.querySelectorAll('.photo-card');
         photoElements.forEach((element, i) => {
-            element.style.display = (i === index) ? 'block' : 'none';
+            element.classList.toggle('active', i === index);
         });
     }
 
