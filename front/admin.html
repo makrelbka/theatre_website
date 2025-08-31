@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список участников по событиям</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: white;
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Участники по событиям</h1>
+    <div id="events-container"></div>
+
+    <script>
+        const container = document.getElementById('events-container');
+        const jsonPath = '/assets/json/visiters.json'; // путь к JSON
+
+        fetch(jsonPath)
+            .then(response => {
+                if (!response.ok) throw new Error('Ошибка загрузки JSON');
+                return response.json();
+            })
+            .then(data => {
+                // Группировка по eventId
+                const grouped = data.reduce((acc, item) => {
+                    if (!acc[item.eventId]) acc[item.eventId] = [];
+                    acc[item.eventId].push(item);
+                    return acc;
+                }, {});
+
+                // Вывод
+                for (const eventId in grouped) {
+                    const eventDiv = document.createElement('div');
+                    const h2 = document.createElement('h2');
+                    h2.textContent = `Событие: ${eventId}`;
+                    eventDiv.appendChild(h2);
+
+                    const table = document.createElement('table');
+                    const thead = document.createElement('thead');
+                    thead.innerHTML = `
+                        <tr>
+                            <th>ФИО</th>
+                            <th>Телефон</th>
+                            <th>Дата</th>
+                        </tr>
+                    `;
+                    table.appendChild(thead);
+
+                    const tbody = document.createElement('tbody');
+                    grouped[eventId].forEach(item => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${item.fio}</td>
+                            <td>${item.phone}</td>
+                            <td>${new Date(item.date).toLocaleString()}</td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+
+                    table.appendChild(tbody);
+                    eventDiv.appendChild(table);
+                    container.appendChild(eventDiv);
+                }
+            })
+            .catch(err => {
+                container.textContent = `Ошибка: ${err.message}`;
+            });
+    </script>
+</body>
+</html>

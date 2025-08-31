@@ -7,8 +7,8 @@ from pathlib import Path
 app = Flask(__name__)
 CORS(app)
 
-TICKETS_FILE = Path(__file__).parent / "tickets.json"
-BOOKINGS_FILE = Path(__file__).parent / "visiters.json"
+TICKETS_FILE = Path(__file__).parent.parent / "front" / "assets" / "json" / "tickets.json"
+BOOKINGS_FILE =  Path(__file__).parent.parent / "front" / "assets" / "json" / "visiters.json"
 
 
 def load_json(file_path, default):

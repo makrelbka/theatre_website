@@ -78,10 +78,16 @@
     }
 
     .news-title {
-        font-size: 18px;
+        font-family: "Impact";
+        font-size: 15px;
         margin: 10px 0;
     }
-
+    .news-text {
+        color: gray;
+        font-family: "Impact";
+        font-size: 13px;
+        margin: 10px 0;
+    }
     .news-date {
         color: #888;
         font-size: 14px;
@@ -103,7 +109,13 @@
         padding: 0 20px;
     }
     .news-title {
-        font-size: 14px;
+        font-family: "Impact";
+        font-size: 10px;
+        margin: 10px 0;
+    }
+    .news-text {
+        font-family: "Impact";
+        font-size: 10px;
         margin: 10px 0;
     }
 
@@ -138,6 +150,7 @@
     border: 3px solid lightblue;
     background-color: white;
     transition: transform 0.3s ease;
+    overflow: hidden;
 }
 
 
@@ -181,7 +194,7 @@
     border: 3px solid lightblue;
     border-radius: 10px;
 
-    aspect-ratio: 16/5;
+    aspect-ratio: 16/5.5;
 
     color: black;
     box-sizing: border-box;
@@ -195,21 +208,26 @@
 }
 
 .review-author {
+    font-family: "Impact";
     font-weight: bold;
     margin-top: 15px;
 }
 
 .review-text {
+    font-family: "Abril Fatface";
     font-size: 14px;
     margin-top: 10px;
 }
 
 .reviews-buttons {
+    font-family: "Impact";
     margin: 20px;
     background-color: white;
 }
 
 .reviews-buttons button {
+    font-family: "Impact";
+    font-size: 15px;
     background-color: transparent;
     border: 3px solid lightblue;
     color: black;
@@ -217,4 +235,8 @@
     border-radius: 5px;
     cursor: pointer;
     margin: 0 10px;
+}
+
+h2 {
+    font-family: "Impact";
 }

@@ -28,9 +28,9 @@
 }
 
 .header span {
-    font-family: 'Cinzel', serif;
+    font-family: 'Impact', serif;
+    color: rgb(173, 216, 230);
     font-size: 40px;
-    color: black;
     display: inline-block;
 }
 
@@ -55,7 +55,7 @@
         margin-top: 20px;
     }
     .nav a {
-        font-family: 'Lora', serif;
+        font-family: 'Impact', serif;
         color: black;
         text-decoration: none;
         font-size: 20px;
@@ -127,7 +127,7 @@
         transition: opacity 0.3s ease, visibility 0.3s ease;
     }
     .mobile-nav a {
-        font-family: 'Lora', serif;
+        font-family: 'Impact', serif;
         font-size: 22px;
         color: white;
         text-decoration: none;

@@ -47,7 +47,8 @@
     border-radius: 12px;
 }
 .ticket-btn {
-    background-color: #ff6600;
+    font-family: "Impact";
+    background-color: rgb(235, 128, 62);
     color: black;
     border: none;
     padding: 10px 20px;
@@ -59,4 +60,9 @@
 
 h1 {
     background-color: white ;
+    font-family: "Impact";
+}
+
+h2 {
+    font-family: "Impact";
 }

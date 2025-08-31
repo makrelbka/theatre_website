@@ -59,5 +59,26 @@
     aspect-ratio: 16/9;      
     overflow: hidden;
     border-radius: 12px;
+    margin-top: 20px;
+}
+
+h2 {
+    font-family: "Impact";
+    margin-bottom: 0;
+}
+h4 {
+    margin-top: 0;
+    font-family: "Impact";
+    color: lightgrey; 
+}
+
+h3 {
+    font-family: "Impact";
+    margin-bottom: 0;
+}
+
+p {
+    margin-top: 0;
+    font-family: "Abril Fatface";
 }
 

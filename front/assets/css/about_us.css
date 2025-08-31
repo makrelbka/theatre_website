@@ -23,7 +23,17 @@
 
 .content_center img {
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 100%;
     justify-content: center;
+}
+
+h1 {
+    font-family: "Impact"
+}
+
+.popa {
+    font-family: "Impact";
+    margin: 1px;
+    color: black;
 }

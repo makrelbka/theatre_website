@@ -24,6 +24,9 @@
                 document.body.insertAdjacentHTML('beforeend', data);
             });
     </script>
+
+    <script src="/assets/js/header_menu_button.js" defer></script>
+    
  <body>
 <div class="content">
     <h1>Запись на постановку</h1> 
@@ -99,7 +102,6 @@ async function sendRegistrationProof() {
         const result = await response.json();
 
         if (response.ok) {
-            // формируем контент модального окна
             const content = `
                 <p><strong>Событие:</strong> ${purchaseData.eventName}</p>
                 <p><strong>Дата:</strong> ${purchaseData.eventDate}</p>
@@ -112,7 +114,6 @@ async function sendRegistrationProof() {
             document.getElementById('modalContent').innerHTML = content;
             document.getElementById('confirmationModal').style.display = 'flex';
 
-            // очищаем форму и localStorage
             document.getElementById('fio').value = '';
             document.getElementById('phone').value = '';
             document.getElementById('policyCheckbox').checked = false;
@@ -129,7 +130,6 @@ async function sendRegistrationProof() {
 
 function closeModal() {
     document.getElementById('confirmationModal').style.display = 'none';
-    // перенаправление на афишу
     window.location.href = '/afisha.html';
 }
 </script>

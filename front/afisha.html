@@ -30,7 +30,7 @@
 </head>
 <body>
     <div class="content">
-    <h1>Афиша</h1>
+    <h1>АФИША</h1>
     <div class="event-container" id="eventContainer"></div>
   </div>
    <script>
@@ -48,7 +48,7 @@ async function loadTickets() {
 const events = [
   {
     id: "event1",
-    title: "Тушь. Варенье. Птеродактиль",
+    title: "ТУШЬ. ВАРЕНЬЕ. ПТЕРОДАКТИЛЬ.",
     date: "22 марта 2025",
     time: "14:00",
     place: "Основная сцена",
@@ -58,7 +58,7 @@ const events = [
   },
   {
     id: "event2",
-    title: "Карнавал Заветных Желаний",
+    title: "КАРНАВАЛ ЗАВЕТНЫХ ЖЕЛАНИЙ",
     date: "22 декабря 2024",
     time: "14:00",
     place: "Основная сцена",
@@ -68,7 +68,7 @@ const events = [
   },
   {
     id: "event3",
-    title: "Ганди молчал по субботам",
+    title: "ГАНДИ МОЛЧАЛ ПО СУББОТАМ",
     date: "27 октября 2024",
     time: "14:00",
     place: "Основная сцена",
@@ -79,14 +79,14 @@ const events = [
 ];
 
 function createEventHTML(event) {
-  const available = ticketsAvailable[event.id] ?? 0; // <- актуальное количество с сервера
+  const available = ticketsAvailable[event.id] ?? 0;
   return `
     <div class="event">
       <a href="${event.link}" style="color: black; text-decoration: none;">
         <img src="${event.poster}" alt="${event.title}">
       </a>
       <div class="event-description">
-        <h2><a href="${event.link}" style="color: black; text-decoration: none;">"${event.title}"</a></h2>
+        <h2><a href="${event.link}" style="color: black; text-decoration: none;">${event.title}</a></h2>
         <p>Дата: ${event.date}</p>
         <p>Время: ${event.time}</p>
         <p>Место: ${event.place}</p>

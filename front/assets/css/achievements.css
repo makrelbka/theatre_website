@@ -64,3 +64,13 @@
     border-radius: 10px;
     padding: 20px;
 }
+
+.season-content {
+    display: none;
+    margin-top: 10px;
+}
+
+.season-content.active {
+    display: block;
+}
+
