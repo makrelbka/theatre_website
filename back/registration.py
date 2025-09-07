@@ -1,15 +1,15 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS 
+from flask import Flask, request, jsonify, send_from_directory
+from flask_cors import CORS
 import json
 from datetime import datetime
 from pathlib import Path
 
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__, static_folder="../front", static_url_path="")
+CORS(app)  # теперь можно убрать origins
 
-TICKETS_FILE = Path(__file__).parent.parent / "front" / "assets" / "json" / "tickets.json"
-BOOKINGS_FILE =  Path(__file__).parent.parent / "front" / "assets" / "json" / "visiters.json"
-
+FRONT_DIR = Path(__file__).parent.parent / "front"
+TICKETS_FILE = FRONT_DIR / "assets" / "json" / "tickets.json"
+BOOKINGS_FILE = FRONT_DIR / "assets" / "json" / "visiters.json"
 
 def load_json(file_path, default):
     if file_path.exists():
@@ -21,6 +21,7 @@ def save_json(file_path, data):
     with open(file_path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+# API
 @app.route("/api/tickets", methods=["GET"])
 def get_tickets():
     tickets = load_json(TICKETS_FILE, {})
@@ -40,11 +41,9 @@ def buy_ticket():
     if tickets.get(event_id, 0) <= 0:
         return jsonify({"error": "Билеты закончились"}), 400
 
-    # уменьшаем билет
     tickets[event_id] -= 1
     save_json(TICKETS_FILE, tickets)
 
-    # добавляем запись
     bookings = load_json(BOOKINGS_FILE, [])
     bookings.append({
         "eventId": event_id,
@@ -55,6 +54,12 @@ def buy_ticket():
     save_json(BOOKINGS_FILE, bookings)
 
     return jsonify({"success": True, "ticketsLeft": tickets[event_id]})
+
+# Раздача фронта
+@app.route("/", defaults={"path": "afisha.html"})
+@app.route("/<path:path>")
+def serve_front(path):
+    return send_from_directory(FRONT_DIR, path)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
