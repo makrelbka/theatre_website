@@ -42,7 +42,7 @@
 
     <script>
         const container = document.getElementById('events-container');
-        const jsonPath = '/assets/json/visiters.json'; // путь к JSON
+        const jsonPath = '/assets/json/visiters.json'; 
 
         fetch(jsonPath)
             .then(response => {
@@ -50,14 +50,12 @@
                 return response.json();
             })
             .then(data => {
-                // Группировка по eventId
                 const grouped = data.reduce((acc, item) => {
                     if (!acc[item.eventId]) acc[item.eventId] = [];
                     acc[item.eventId].push(item);
                     return acc;
                 }, {});
 
-                // Вывод
                 for (const eventId in grouped) {
                     const eventDiv = document.createElement('div');
                     const h2 = document.createElement('h2');

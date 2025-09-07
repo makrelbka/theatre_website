@@ -17,6 +17,7 @@ stop:
 	fi
 	@echo "Все процессы остановлены."
 
+restart: stop start
 
 status:
 	@echo "Проверка сервера на порту $(back_PORT)..."
