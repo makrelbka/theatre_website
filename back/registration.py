@@ -62,4 +62,4 @@ def serve_front(path):
     return send_from_directory(FRONT_DIR, path)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=8081, debug=True)
